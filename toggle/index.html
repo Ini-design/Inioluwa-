@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login / Signup Professional UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="auth-container" aria-label="Authentication">
+    <section class="auth-card">
+      <nav class="auth-toggle" role="tablist" aria-label="Form switcher">
+        <button id="loginTab" class="auth-tab active" role="tab" aria-selected="true" aria-controls="loginPanel" tabindex="0">
+          Login
+        </button>
+        <button id="signupTab" class="auth-tab" role="tab" aria-selected="false" aria-controls="signupPanel" tabindex="-1">
+          Signup
+        </button>
+      </nav>
+
+      <div id="loginPanel" class="auth-panel" role="tabpanel" aria-labelledby="loginTab">
+        <form id="loginForm" class="auth-form" autocomplete="on" novalidate>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" required autocomplete="current-password" />
+          </label>
+          <button type="submit" class="auth-submit">Login</button>
+        </form>
+      </div>
+
+      <div id="signupPanel" class="auth-panel hidden" role="tabpanel" aria-labelledby="signupTab">
+        <form id="signupForm" class="auth-form" autocomplete="on" novalidate>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" required autocomplete="new-password" />
+          </label>
+          <button type="submit" class="auth-submit">Signup</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

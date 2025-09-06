@@ -1,0 +1,134 @@
+:root {
+  --color-primary: #2563eb;
+  --color-primary-dark: #1e40af;
+  --color-bg: #f8fafc;
+  --color-card: #fff;
+  --color-border: #e5e7eb;
+  --color-text: #111827;
+  --radius: 12px;
+  --transition: 0.2s all cubic-bezier(.4,0,.2,1);
+  --shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+body {
+  background: var(--color-bg);
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+}
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.auth-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 0.75rem 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: var(--radius) var(--radius) 0 0;
+  outline: none;
+}
+
+.auth-tab.active,
+.auth-tab:focus-visible {
+  border-bottom: 2.5px solid var(--color-primary);
+  color: var(--color-primary-dark);
+  background: #f1f5f9;
+}
+
+.auth-panel {
+  animation: fadein .25s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(8px);}
+  to { opacity: 1; transform: none;}
+}
+
+.hidden {
+  display: none;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.auth-form input {
+  padding: 0.7rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: var(--color-text);
+  transition: border-color var(--transition);
+}
+
+.auth-form input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  background: #fff;
+}
+
+.auth-submit {
+  padding: 0.85rem 0;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+}
+
+.auth-submit:hover,
+.auth-submit:focus {
+  background: var(--color-primary-dark);
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1.2rem 0.5rem;
+    max-width: 97vw;
+  }
+}
